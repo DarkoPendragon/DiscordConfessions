@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args, perms, flags) => {
   if (!args[0]) {
     const perms = client.elevation(message);
-    const hex = client.ranHex();
     var cats = new Map();
     client.commands.forEach(c => {
       if (c.conf.enabled == true && perms >= c.conf.permLevel) {
@@ -24,7 +23,7 @@ exports.run = async (client, message, args, perms, flags) => {
     cats.forEach(cat => {
       embed.addField(cat.name, cat.array.join(", "));
     });
-    embed.setColor(hex)
+    embed.setColor('RANDOM')
     embed.setTimestamp()
     embed.setThumbnail(client.user.avatarURL());
     embed.setFooter(`Made by ${client.users.cache.get("693300262672138290").tag}`, client.users.cache.get("693300262672138290").avatarURL());
@@ -39,7 +38,7 @@ exports.run = async (client, message, args, perms, flags) => {
         cats.forEach(cat => {
           embed.addField(cat.name, cat.array.join(", "));
         });
-        embed.setColor(hex)
+        embed.setColor('RANDOM')
         embed.setTimestamp()
         embed.setThumbnail(client.user.avatarURL())
         embed.setFooter(`Made by ${client.users.cache.get("693300262672138290").tag}`, client.users.cache.get("693300262672138290").avatarURL());
@@ -58,7 +57,7 @@ exports.run = async (client, message, args, perms, flags) => {
         cats.forEach(cat => {
           embed.addField(cat.name, cat.array.join(", "));
         });
-        embed.setColor(hex)
+        embed.setColor('RANDOM')
         embed.setTimestamp()
         embed.setThumbnail(client.user.avatarURL())
         embed.setFooter(`Made by ${client.users.cache.get("693300262672138290").tag}`, client.users.cache.get("693300262672138290").avatarURL());

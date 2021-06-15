@@ -11,22 +11,6 @@ class Confessions extends Discord.Client {
         this.wait = require("util").promisify(setTimeout);
     }
 
-
-    ranHex(dontReplace) {
-        var random = Math.random();
-        var exponent = --random.toExponential().split('-')[1];
-        random *= Math.pow(10, exponent);
-        if (dontReplace) return '#' + (~~(random * (1 << 24))).toString(16);
-        if (!dontReplace) return '0x' + (~~(random * (1 << 24))).toString(16);
-    }
-
-    ranInt() {
-        let r = parseInt(Math.floor((Math.random() * 255) + 1));
-        let g = parseInt(Math.floor((Math.random() * 255) + 1));
-        let b = parseInt(Math.floor((Math.random() * 255) + 1));
-        return r << 16 | g << 8 | b;
-    }
-
     elevation(message) {
         if (message.channel.type === 'dm') return 4;
         let permlvl = 0;
