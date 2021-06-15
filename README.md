@@ -8,4 +8,4 @@ Confessions will look for a channel starting with `confess-` (the rest will be a
 Confessions has a command to auto-create a category and channel for it to use. Using `c!start` will do so.
 
 # SideNote
-I did plan to make it where you could DM the bot your confession and then select the server to send it to, but I never did. If you send a message to your channel an anyone with the Administrator permission can also see it and will be able to tell when you send messages from said channel. If I get bored enough I'll add the DM feature. And yes, I am aware this could be a *loooot* better.
+I did plan to make it where you could DM the bot your confession and then select the server to send it to, but I never did. If you send a message to your channel then anyone with the Administrator permission can also see it and will be able to tell when you send messages from said channel. If I get bored enough I'll add the DM feature. And yes, I am aware this could be a *loooot* better.
