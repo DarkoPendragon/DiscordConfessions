@@ -1,0 +1,31 @@
+{
+  "name": "discordconfessions",
+  "version": "1.0.0",
+  "description": "This is a old Discord.js bot made awhile back. It allows users to \"confess\" things without other users (mostly) knowing. A lot of useless things have been removed from it but it runs the same.",
+  "main": "index.js",
+  "dependencies": {
+    "klaw": "^3.0.0",
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkoPendragon/DiscordConfessions.git"
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "bot",
+    "confess",
+    "anon"
+  ],
+  "author": "DarkoPendragon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarkoPendragon/DiscordConfessions/issues"
+  },
+  "homepage": "https://github.com/DarkoPendragon/DiscordConfessions#readme"
+}
