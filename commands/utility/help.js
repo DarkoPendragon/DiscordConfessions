@@ -18,7 +18,7 @@ exports.run = async (client, message, args, perms, flags) => {
 
     var embed = new Discord.MessageEmbed();
     embed.setTitle(`Commands Info`)
-    embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel.`)
+    embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel, or DM me something and I'll send it to the confessions channel!`)
     embed.setAuthor('Confessions')
     cats.forEach(cat => {
       embed.addField(cat.name, cat.array.join(", "));
@@ -33,7 +33,7 @@ exports.run = async (client, message, args, perms, flags) => {
       }).catch(() => {
         const embed = new Discord.MessageEmbed();
         embed.setTitle(`Commands Info`)
-        embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel.`)
+        embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel, or DM me something and I'll send it to the confessions channel!`)
         embed.setAuthor('Confessions')
         cats.forEach(cat => {
           embed.addField(cat.name, cat.array.join(", "));
@@ -52,7 +52,7 @@ exports.run = async (client, message, args, perms, flags) => {
       }).catch(() => {
         const embed = new Discord.MessageEmbed();
         embed.setTitle(`Commands Info`)
-        embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel.`)
+        embed.setDescription(`Use \`c!help commandname\` to view help on a command. You have **class ${perms}** access. Use \`c!start\` (must be admin) to open your confession booth. Use \`c!open\` to make your own secret confession channel, or DM me something and I'll send it to the confessions channel!`)
         embed.setAuthor('Confessions')
         cats.forEach(cat => {
           embed.addField(cat.name, cat.array.join(", "));

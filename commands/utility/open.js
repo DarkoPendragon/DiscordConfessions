@@ -20,7 +20,7 @@ exports.run = async (client, msg, args) => {
         chan.setParent(boothChannel.first().id, false).then(() => {
           chan.updateOverwrite(r.id, {VIEW_CHANNEL: false, SEND_MESSAGES: false}).then(() => {
             chan.updateOverwrite(msg.author.id, {VIEW_CHANNEL: true, SEND_MESSAGES: true}).then(() => {
-              chan.send(`Here is your personal confession/ranting channel. Messages sent here will be deleted and sent to Confession Booth (<#${boothChannel.first().id}>). No one will know you sent them~`);
+              chan.send(`Here is your personal confession/ranting channel. Messages sent here will be deleted and sent to Confession Booth (<#${boothChannel.first().id}>). No one will know you sent them~\nYou may also DM me and I'll send your confession without you having to type in the server.`);
             }).catch((e) => msg.author.send(`An error occured:\n\`\`\`\nSET_CHANNEL_OVERWRITES: ${e && e.message ? e.message : e}\n\`\`\``));
           }).catch((e) => msg.author.send(`An error occured:\n\`\`\`\nSET_CHANNEL_OVERWRITES: ${e && e.message ? e.message : e}\n\`\`\``));
         }).catch((e) => msg.author.send(`An error occured:\n\`\`\`\nCREATE_CHANNEL: ${e && e.message ? e.message : e}\n\`\`\``));

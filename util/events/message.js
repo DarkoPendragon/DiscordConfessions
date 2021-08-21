@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 module.exports = (client, msg) => {
     if (msg.author.bot || msg.system) return;
+    if (msg.channel.type == "dm" && !msg.content.startsWith("c!")) client.sendConfession(msg)
 
-    if (msg.channel.name.startsWith("confess-")) {
+    if (msg.channel.type !== "dm" && msg.channel.name.startsWith("confess-")) {
         let cnt = msg.content.toLowerCase()
         let confessChan = msg.guild.channels.cache.filter(c => c.name.toLowerCase() == "confessions" && c.type == "text");
         if (!confessChan.size > 0) return msg.channel.send("The Confessions category doesn't exist, I need one to do my work.\nSomeone with admin permissions needs to say \`start confession\` or someone with channel making permissions needs to make the channel.");

@@ -1,5 +1,6 @@
 exports.run = async (client, msg, args) => {
-  const mem = msg.guild.members.cache.get("775119474785255424");
+  const mem = await client.getMember(msg.guild.id, msg.author.id)
+  console.log(mem)
   if (mem.hasPermission("MANAGE_CHANNELS")) {
     let boothChannel = msg.guild.channels.cache.filter(c => c.name.toLowerCase() == "confession booth" && c.type == "category");
     if (boothChannel.size > 0) return msg.reply("a category named Confession Booth already exists.");;
