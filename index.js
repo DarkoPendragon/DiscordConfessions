@@ -9,6 +9,38 @@ class Confessions extends Discord.Client {
         this.aliases = new Map();
         this.web_port = process.env.PORT;
         this.wait = require("util").promisify(setTimeout);
+        this.runningGuild = "MAIN SERVER ID"; // replace this
+    }
+
+    async sendConfession(msg) {
+        if (!msg.content || msg.content.length == 0) return false;
+        let guild = await this.getGuild(this.runningGuild)
+        let confchan = guild.channels.cache.filter(c => c.name.toLowerCase() == "confessions" && c.type == "text").first()
+        if (!confchan) return false;
+        confchan.send(msg.content).then(m => {
+            msg.react("✅").catch(console.log)
+        })
+    }
+
+    async getGuild(id) {
+        return new Promise(async (resolve, reject) => {
+            if (this.guilds.cache.has(id)) resolve(this.guilds.cache.get(id))
+            else {
+                const guild = await this.guilds.fetch(id, true, true)
+                resolve(guild)
+            }
+        })
+    }
+
+    async getMember(gid, mid) {
+        return new Promise(async (resolve, reject) => {
+            const guild = await this.getGuild(gid)
+            if (guild.members.cache.has(mid)) resolve(guild.members.cache.get(mid))
+            else {
+                const member = await guild.members.fetch({ user: mid, force: true, cache: true })
+                resolve(member)
+            }
+        })
     }
 
     elevation(message) {
@@ -19,7 +51,6 @@ class Confessions extends Discord.Client {
         if (message.member.permissions.has("BAN_MEMBERS")) permlvl = 2;
         if (message.member.permissions.has("ADMINISTRATOR")) permlvl = 3;
         if (message.member.id === message.member.guild.ownerID) permlvl = 4;
-        if (client.info.bot.creators.includes(message.author.id)) permlvl = 5;
         return permlvl;
     }
 }
@@ -30,7 +61,7 @@ const client = new Confessions({
 })
 require('./util/utils')(client);
 
-const init = async () => {
+async function init() {
     //===========================================================================
     // Confession
     //===========================================================================
@@ -61,6 +92,6 @@ const init = async () => {
         }
     });
 
-    client.login("your bot token goes here");
+    client.login("BOT TOKEN"); // replace this
 };
 init();
